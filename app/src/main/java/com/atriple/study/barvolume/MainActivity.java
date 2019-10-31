@@ -23,13 +23,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Komponen BarVolume (Basic View and Single Activity)
         editLength = findViewById(R.id.edit_length);
         editWidth = findViewById(R.id.edit_width);
         editHeight = findViewById(R.id.edit_height);
         btnCalculate = findViewById(R.id.btn_calculate);
         tvResult = findViewById(R.id.tv_result);
 
+        //Komponen Latihan Intent
+        Button btnMoveActivity = findViewById(R.id.btn_move_activity);
+
+        //Listener
         btnCalculate.setOnClickListener(this);
+        btnMoveActivity.setOnClickListener(this);
 
         if (savedInstanceState != null) {
             String result = savedInstanceState.getString(STATE_RESULT);
@@ -37,14 +43,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
     @Override
     public void onClick(View v) {
-        //Precondition for clean code
-        if (v.getId() != R.id.btn_calculate) {
-            return;
+        switch(v.getId()){
+            case R.id.btn_calculate:
+                calculateBarVolume();
+                break;
+            case R.id.btn_move_activity:
+                break;
         }
+    }
 
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(STATE_RESULT, tvResult.getText().toString());
+    }
+
+    private void calculateBarVolume(){
         String inputLength = editLength.getText().toString().trim();
         String inputWidth = editWidth.getText().toString().trim();
         String inputHeight = editHeight.getText().toString().trim();
@@ -90,11 +105,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             double volume = length * width * height;
             tvResult.setText(String.valueOf(volume));
         }
-    }
-
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString(STATE_RESULT, tvResult.getText().toString());
     }
 
     private Double toDouble(String str) {
