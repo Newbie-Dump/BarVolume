@@ -5,4 +5,9 @@
     <string name="hitung">Hitung</string>
     <string name="initial_value">0</string>
     <string name="tinggi">Tinggi</string>
+    <string name="move_activity">Pindah Activity</string>
+    <string name="move_with_data">Pindah Activity dengan Data</string>
+    <string name="dial_number">Dial a Number</string>
+    <string name="data_received">Data Diterima</string>
+    <string name="this_is_moveactivity">Ini MoveActivity</string>
 </resources>
