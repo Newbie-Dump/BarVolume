@@ -1,5 +1,6 @@
 package com.atriple.study.barvolume;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -32,10 +33,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //Komponen Latihan Intent
         Button btnMoveActivity = findViewById(R.id.btn_move_activity);
+        Button btnMoveWithDataActivity = findViewById(R.id.btn_move_activity_data);
 
         //Listener
         btnCalculate.setOnClickListener(this);
         btnMoveActivity.setOnClickListener(this);
+        btnMoveWithDataActivity.setOnClickListener(this);
 
         if (savedInstanceState != null) {
             String result = savedInstanceState.getString(STATE_RESULT);
@@ -50,6 +53,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 calculateBarVolume();
                 break;
             case R.id.btn_move_activity:
+                Intent moveIntent = new Intent(MainActivity.this, MoveActivity.class);
+                startActivity(moveIntent);
+                break;
+            case R.id.btn_move_activity_data:
+                Intent moveWithDataIntent = new Intent(MainActivity.this, MoveWithDataActivity.class);
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "DicodingAcademy Boy");
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 5);
+                startActivity(moveWithDataIntent);
                 break;
         }
     }
