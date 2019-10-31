@@ -1,6 +1,7 @@
 package com.atriple.study.barvolume;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -34,11 +35,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Komponen Latihan Intent
         Button btnMoveActivity = findViewById(R.id.btn_move_activity);
         Button btnMoveWithDataActivity = findViewById(R.id.btn_move_activity_data);
+        Button btnDialPhone = findViewById(R.id.btn_dial_number);
+
 
         //Listener
         btnCalculate.setOnClickListener(this);
         btnMoveActivity.setOnClickListener(this);
         btnMoveWithDataActivity.setOnClickListener(this);
+        btnDialPhone.setOnClickListener(this);
 
         if (savedInstanceState != null) {
             String result = savedInstanceState.getString(STATE_RESULT);
@@ -61,6 +65,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "DicodingAcademy Boy");
                 moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 5);
                 startActivity(moveWithDataIntent);
+                break;
+            case R.id.btn_dial_number:
+                String phoneNumber = "081210841382";
+                Intent dialPhoneIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+phoneNumber));
+                startActivity(dialPhoneIntent);
                 break;
         }
     }
