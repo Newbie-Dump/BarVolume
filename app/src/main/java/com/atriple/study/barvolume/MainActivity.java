@@ -37,12 +37,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnMoveWithDataActivity = findViewById(R.id.btn_move_activity_data);
         Button btnDialPhone = findViewById(R.id.btn_dial_number);
 
+        //Button untuk MyViewActivity (Google Pixel)
+        Button btnMyViewActivity = findViewById(R.id.btn_google_pixel);
 
         //Listener
         btnCalculate.setOnClickListener(this);
         btnMoveActivity.setOnClickListener(this);
         btnMoveWithDataActivity.setOnClickListener(this);
         btnDialPhone.setOnClickListener(this);
+        btnMyViewActivity.setOnClickListener(this);
 
         if (savedInstanceState != null) {
             String result = savedInstanceState.getString(STATE_RESULT);
@@ -71,6 +74,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent dialPhoneIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+phoneNumber));
                 startActivity(dialPhoneIntent);
                 break;
+            case R.id.btn_google_pixel:
+                Intent viewIntentGooglePixel = new Intent(MainActivity.this, MyViewActivity.class);
+                startActivity(viewIntentGooglePixel);
         }
     }
 
