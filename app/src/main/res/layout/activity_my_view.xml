@@ -54,8 +54,9 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
+            style="@style/TextContent.Subtitle"
             android:text="@string/dummy_stock"
-            android:textSize="12sp" />
+             />
 
         <TextView
             android:layout_width="match_parent"
@@ -181,11 +182,7 @@
         </RelativeLayout>
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
+            style="@style/ButtonGeneral"
             android:text="@string/beli" />
 
     </LinearLayout>
