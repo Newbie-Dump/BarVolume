@@ -18,9 +18,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListViewHolder> {
     private ArrayList<Hero> listHero;
+    private OnItemClickCallback onItemClickCallback;
 
     public ListHeroAdapter(ArrayList<Hero> list) {
         this.listHero = list;
+    }
+
+    public interface OnItemClickCallback {
+        /*
+        Interface used for custom data type that contain callback function onItemClicked()
+        In this case, we want to get the item data model Hero so we can use the information to do something
+         */
+
+        void onItemClicked(Hero data);
+    }
+
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        /*
+        Set what callback function is going to be executed,
+        which arguments going to pass OnItemClickCallback by instantiating it.
+         */
+        this.onItemClickCallback = onItemClickCallback;
     }
 
     @NonNull
@@ -39,6 +57,15 @@ public class ListHeroAdapter extends RecyclerView.Adapter<ListHeroAdapter.ListVi
                 .into(holder.imgPhoto);
         holder.tvName.setText(hero.getName());
         holder.tvDetail.setText(hero.getDetail());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                //When certain item clicked, it will run the callback function onItemClicked()
+                onItemClickCallback.onItemClicked(listHero.get(holder.getAdapterPosition()));
+            }
+        });
     }
 
     @Override
