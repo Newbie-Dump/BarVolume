@@ -1,6 +1,7 @@
 package com.atriple.study.barvolume;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.atriple.study.barvolume.adapter.GridHeroAdapter;
 import com.atriple.study.barvolume.adapter.ListHeroAdapter;
 import com.atriple.study.barvolume.model.Hero;
 import com.atriple.study.barvolume.model.HeroesData;
@@ -36,6 +38,12 @@ public class MyRecyclerView extends AppCompatActivity {
         rvHeroes.setAdapter(listHeroAdapter);
     }
 
+    private void showRecyclerGrid(){
+        rvHeroes.setLayoutManager(new GridLayoutManager(this, 2));
+        GridHeroAdapter gridHeroAdapter = new GridHeroAdapter(list);
+        rvHeroes.setAdapter(gridHeroAdapter);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -51,8 +59,10 @@ public class MyRecyclerView extends AppCompatActivity {
     public void setMode(int selectedMode) {
         switch (selectedMode) {
             case R.id.action_list:
+                showRecyclerList();
                 break;
             case R.id.action_grid:
+                showRecyclerGrid();
                 break;
             case R.id.action_cardview:
                 break;
