@@ -40,12 +40,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Button untuk MyViewActivity (Google Pixel)
         Button btnMyViewActivity = findViewById(R.id.btn_google_pixel);
 
+        //Button untuk MyRecyclerView (Hero List)
+        Button btnMyRecyclerView = findViewById(R.id.btn_hero_list);
+
         //Listener
         btnCalculate.setOnClickListener(this);
         btnMoveActivity.setOnClickListener(this);
         btnMoveWithDataActivity.setOnClickListener(this);
         btnDialPhone.setOnClickListener(this);
         btnMyViewActivity.setOnClickListener(this);
+        btnMyRecyclerView.setOnClickListener(this);
 
         if (savedInstanceState != null) {
             String result = savedInstanceState.getString(STATE_RESULT);
@@ -77,6 +81,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_google_pixel:
                 Intent viewIntentGooglePixel = new Intent(MainActivity.this, MyViewActivity.class);
                 startActivity(viewIntentGooglePixel);
+                break;
+            case R.id.btn_hero_list:
+                Intent myRecyclerViewIntent = new Intent(MainActivity.this, MyRecyclerView.class);
+                startActivity(myRecyclerViewIntent);
+                break;
         }
     }
 

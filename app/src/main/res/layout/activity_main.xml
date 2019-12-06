@@ -88,4 +88,11 @@
         android:layout_marginBottom="16dp"
         android:text="Google Pixel" />
 
+    <Button
+        android:id="@+id/btn_hero_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Hero List" />
+
 </LinearLayout>
