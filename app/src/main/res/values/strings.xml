@@ -35,4 +35,8 @@
     <string name="battery">Battery</string>
     <string name="dummy_seller">Narenda Wicaksono</string>
     <string name="beli">Beli</string>
+
+    <!-- For track 7-->
+    <string name="heroes_name">Nama Pahlawan</string>
+    <string name="detail">Detail</string>
 </resources>
