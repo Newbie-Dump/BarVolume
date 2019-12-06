@@ -1,5 +1,7 @@
 package com.atriple.study.barvolume.model;
 
+import com.atriple.study.barvolume.R;
+
 import java.util.ArrayList;
 
 public class HeroesData {
