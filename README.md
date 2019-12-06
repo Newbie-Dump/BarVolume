@@ -8,7 +8,8 @@ Track :
 5. [Views and ViewGroup](https://github.com/Newbie-Dump/BarVolume/tree/a70a18f3f5437c2c9650be8b80e435c08a4e19bb)
 6. [Style and Theme](https://github.com/Newbie-Dump/BarVolume/tree/3dccde8ed8a866e1231c6fc5ad8d9af0756b6e04)
 7. [Recycler View : List](https://github.com/Newbie-Dump/BarVolume/tree/39b160910495821334d4f94a9f1333b0c6526eca)
-8. 
+8. [Recycler View : Grid](https://github.com/Newbie-Dump/BarVolume/tree/6f3c3ebe18bdca753efd256d70ae7efcc166c571)
+9. 
 
 ## Best Practice
 - OnClickListener : https://stackoverflow.com/questions/37014156/android-onclicklistener-implementation-best-practices
