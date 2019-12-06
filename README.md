@@ -10,7 +10,9 @@ Track :
 7. [Recycler View : List](https://github.com/Newbie-Dump/BarVolume/tree/39b160910495821334d4f94a9f1333b0c6526eca)
 8. [Recycler View : Grid](https://github.com/Newbie-Dump/BarVolume/tree/6f3c3ebe18bdca753efd256d70ae7efcc166c571)
 9. [Recycler View : Card](https://github.com/Newbie-Dump/BarVolume/tree/a9eb11b8d1060b6693cef409d388987cdbed3a7b)
-10. 
+10. [OnClickItem](https://github.com/Newbie-Dump/BarVolume/tree/98adbffb381d4298e999a84b85f69b4cb740a631)
+
+Done.
 
 ## Best Practice
 - OnClickListener : https://stackoverflow.com/questions/37014156/android-onclicklistener-implementation-best-practices
